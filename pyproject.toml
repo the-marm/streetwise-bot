@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "streetwise-bot"
+version = "0.1.0"
+description = "Телеграм бот для інтернет-магазину Streetwise для автоматизації прийняття замовлень."
+authors = ["Marmest <marmest@posteo.net>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+aiogram = "^3.4.1"
+python-dotenv = "^1.0.1"
+
+
+[tool.poetry.group.dev.dependencies]
+pyright = "^1.1.352"
+ruff = "^0.3.0"
+mypy = "^1.8.0"
+
+[tool.ruff]
+line-length = 88
+indent-width = 4
+
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+  "D", # remove later
+  "BLE001",
+]
+
+fixable = ["ALL"]
+unfixable = []
+
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
